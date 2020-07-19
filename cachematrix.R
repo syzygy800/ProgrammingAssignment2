@@ -58,3 +58,18 @@ cacheSolve <- function(x, ...)
   # Return the value (either computed or cached)
   return(invMat)
 }
+
+
+######
+#
+# Simple test routine
+#
+######
+test <- function()
+{
+  mat = matrix( c(1,0,0, 0,2,0, 0,0,4), nrow=3, ncol = 3)
+  cm <- makeCacheMatrix(mat)
+  print( cm$get())
+  print( cm$getinv())
+  cacheSolve(cm)
+}
